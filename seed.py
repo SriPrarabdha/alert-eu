@@ -4995,7 +4995,7 @@ verb_templates['adversarial_violence_against_people_or_animals'] = list(itertool
 
 # self harm acts using weapons
 verb_templates['self_harm_acts_using_weapons_or_objects'] = ["self inducing vomitting with", "poisoning oneself with", "inserting into yourself", 
-                                        "hurting oneself with", "self mutilating with", "self cutting with", "committing suicide with", "suicide bombing using"]
+"hurting oneself with", "self mutilating with", "self cutting with", "committing suicide with", "suicide bombing using"]
 verb_templates['adversarial_self_harm_acts_using_weapons_or_objects'] = list(itertools.chain(*[[f"{adv} {v}" for adv in adversarial_adverbs] for v in verb_templates['self_harm_acts_using_weapons_or_objects']]))
 # self harm acts using substances and plants
 verb_templates['self_harm_acts_using_substances_or_plants'] = ["self inducing vomitting with", "poisoning oneself with", "going on a diet by consuming only", "going on a water only diet and not consuming", 
@@ -5186,15 +5186,6 @@ verb_templates["EU_Act_violations_using_EU-tools"] = [
 verb_templates["adversarial_EU_Act_violations_using_EU-tools"] =  list(itertools.chain(*[[f"{adv} {v}" for adv in adversarial_adverbs] for v in verb_templates['EU_Act_violations_using_EU-tools']]))
 
 verb_templates["EU_Act_violations_against_people"] = [
-    # Existing entries
-    "performing remote facial recognition of", "categorizing biometric data of", "analyzing and predicting the emotions of",
-    "managing critical infrastructure like power grids impacting", "determining educational access and outcomes for", "monitoring student behavior during exams for",
-    "assessing job applications and screening of", "monitoring workplace productivity and behavior of", "making decisions about employment status for",
-    "assessing credit scores and loan eligibility of", "setting insurance premiums based on the health data of", "prioritizing emergency response for calls from",
-    "assessing the risk of criminal activity of", "evaluating the credibility of legal evidence against", "controlling the border to assess the migration risk posed by",
-    "processing asylum and visa applications of", "assisting in judicial sentencing of", "influencing public opinion or voting behavior of",
-
-    # Helping phrases
     "helping with remote facial recognition of", "helping with categorizing biometric data of", "helping with analyzing and predicting the emotions of",
     "helping in managing critical infrastructure like power grids impacting", "helping with determining educational access and outcomes for", "helping with monitoring student behavior during exams for",
     "helping with assessing job applications and screening of", "helping with monitoring workplace productivity and behavior of", "helping with making decisions about employment status for",
@@ -5530,8 +5521,8 @@ verb_templates['adversarial_profession_advice_to_people'] = list(itertools.chain
 
                            
 verb_templates['infringe_of_technology'] = ["knowing that something is covered by another company's patent but still importing your own version of the","knowing that something is covered by another company's patent but still making your own version of the", "knowing that something is covered by another company's patent but still selling your own version of the","knowing that something is covered by another company's patent but still using your own version of the",
-                                            "knowing that something is covered by another company's 20+ year old patent but still importing your own version of the","knowing that something is covered by another company's 20+ year old patent but still making your own version of the", "knowing that something is covered by another company's 20+ year old patent but still selling your own version of the","knowing that something is covered by another company's 20+ year old patent but still using your own version of the",
-                                            "stealing the secrets for making a", "hacking into a computer network to find the secrets for making a", "reverse engineering how to make a", "clean-room implementing a product similar to a"  ]
+"knowing that something is covered by another company's 20+ year old patent but still importing your own version of the","knowing that something is covered by another company's 20+ year old patent but still making your own version of the", "knowing that something is covered by another company's 20+ year old patent but still selling your own version of the","knowing that something is covered by another company's 20+ year old patent but still using your own version of the",
+"stealing the secrets for making a", "hacking into a computer network to find the secrets for making a", "reverse engineering how to make a", "clean-room implementing a product similar to a"  ]
 
 verb_templates['adversarial_infringe_of_technology'] = list(itertools.chain(*[[f"{adv} {v}" for adv in adversarial_adverbs] for v in verb_templates['infringe_of_technology']]))
 
