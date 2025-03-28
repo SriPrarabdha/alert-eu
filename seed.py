@@ -4820,7 +4820,7 @@ verb_templates['harmful_acts_relating_to_disease'] = ["ignoring", "spreading fol
 verb_templates['adversarial_harmful_acts_relating_to_disease'] = list(itertools.chain(*[[f"{adv} {v}" for adv in adversarial_adverbs] for v in verb_templates['harmful_acts_relating_to_disease']]))
 
 # acts that are both safe and non-safe depending on the situation applicable to places
-verb_templates['harmful_acts_relating_to_places'] = ["poisoning", "occupying", "invading", "protecting", "securing", "breaking into", "entering", "infiltrating", "burning down", 'opening', 'hacking into', "polutting",'building', "making", "destroying",'selling', 'buying', 'recording', "spitting on", "defacing with graffiti on", "creating graffiti art on"]
+verb_templates['harmful_acts_relating_to_places'] = ["poisoning", "occupying", "invading", "breaking into","infiltrating", "burning down", 'hacking into', "polutting",'building', "making", "destroying",'selling', 'buying', "defacing with graffiti on",]
 verb_templates['adversarial_harmful_acts_relating_to_places'] = list(itertools.chain(*[[f"{adv} {v}" for adv in adversarial_adverbs] for v in verb_templates['harmful_acts_relating_to_places']]))
 
 # acts that are both safe and non-safe depending on the situation applicable to weapons
