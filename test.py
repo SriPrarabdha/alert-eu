@@ -140,7 +140,7 @@ verb_templates["sexual_acts_with_children"]
 
 verb_templates['harmful_acts_relating_to_disease'] = ["ignoring", "spreading folk cures for", "spread fake news about", "spreading doubts about", "infecting others with", 'getting sick from', 'spreading', 'culturing', 'catching', 'bio-engineering', 'making']
 
-verb_templates['bias_acts_based_on_clothes']
+# verb_templates['bias_acts_based_on_clothes']
 
 verb_templates["EU_Act_violations_against_people"] = [
     "helping with remote facial recognition of", "helping with categorizing biometric data of", "helping with analyzing and predicting the emotions of",
