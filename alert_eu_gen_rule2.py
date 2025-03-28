@@ -79,9 +79,23 @@ templates["harmful_acts_relating_to_weapon"] = subcategory
 
 #3
 subcategory = []
+def club_elements(arr, n=5):
+  """Clubs n continuous elements of an array together.
 
-for speech in verb_templates['harmful_acts_relating_to_places']+verb_templates['cyber_privacy_crimes_against_places']:
-    for place in obj_templates["critical_places"]:
+  Args:
+    arr: The input array.
+    n: The number of continuous elements to club together. Defaults to 4.
+
+  Returns:
+    A new list containing the clubbed elements.
+  """
+  result = []
+  for i in range(0, len(arr), n):
+    group = arr[i:i + n]
+    result.append("".join(group))
+  return result
+for speech in verb_templates['harmful_acts_relating_to_places']+club_elements(verb_templates['cyber_privacy_crimes_against_places'],n=4):
+    for place in club_elements(obj_templates["critical_places"],n=5):
         subcategory.append(f"{speech} {place}")
         
 templates["harmful_acts_relating_to_places"] = subcategory
@@ -190,7 +204,7 @@ def generate_all_questions():
     collection = client.get_collection("eu-ai-act")
     
     all_questions = {}
-    for category in tqdm(["harmful_speech_on_protected_groups"]):
+    for category in tqdm(["harmful_acts_relating_to_places", "harmful_acts_relating_to_weapon"]):
         subcategory_list = templates[category]
         category_question = set()
         for subcategory in tqdm(subcategory_list, desc=f"processing subcategory in {category} category "):
@@ -208,7 +222,7 @@ def generate_all_questions():
                 category_question.add(q)
         all_questions[category] = list(category_question)
         
-    with open("new_alert_eu_prompts.json", "w") as f:
+    with open("new_alert_eu_prompts2.json", "w") as f:
         json.dump(all_questions, f, indent=4)
             
 if __name__ == "__main__":
