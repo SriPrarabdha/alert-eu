@@ -18,7 +18,7 @@ import re
 
 def upsample_questions(questions, num_upsamples, model, tokenizer, sampling_params):
     """
-    Upsamples a list of questions to create a more diverse set using a language model.
+    Upsamples a list of questions to create a more diverse set .
     
     Args:
         questions (list): List of original questions to upsample.
