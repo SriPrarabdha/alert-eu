@@ -8,12 +8,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 from vllm import LLM, SamplingParams
 
-# tokenizer = AutoTokenizer.from_pretrained("cognitivecomputations/dolphin-2.9.2-qwen2-7b")
-# model = LLM(model="cognitivecomputations/dolphin-2.9.2-qwen2-7b", tensor_parallel_size=1)
-tokenizer = AutoTokenizer.from_pretrained("cognitivecomputations/dolphin-2.9.2-qwen2-7b", cache_dir="/leonardo_work/EUHPC_E03_068/harsh_old_model_cache")
+tokenizer = AutoTokenizer.from_pretrained("cognitivecomputations/dolphin-2.9.2-qwen2-7b")
+model = LLM(model="cognitivecomputations/dolphin-2.9.2-qwen2-7b", tensor_parallel_size=1)
 
-# Load model with vLLM and specify the cache directory using `download_dir`
-model = LLM(model="cognitivecomputations/dolphin-2.9.2-qwen2-7b", tensor_parallel_size=1, download_dir="/leonardo_work/EUHPC_E03_068/harsh_old_model_cache")
 templates = {}
 
 import random
