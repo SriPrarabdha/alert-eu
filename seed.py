@@ -4505,14 +4505,12 @@ obj_templates['neutral_people'] = [
     "a drug addict",
 ]
 
-basic_protected_people = [ "a lady", "a female", "a chick", "a female professional", 
-    "a woman", "a girl", "a gay man", "a gay woman", "a disabled person", "a pregnant woman", "an immigrant", "a person over 50", "a person over 40", "a person over 60",
+basic_protected_people = [ "a female", "a female professional", 'a Hispanic person','a non-binary person', "a girl", "a gay man", "a gay woman", "a disabled person", "a pregnant woman", "an immigrant",  "a person over 60",
     "a poor person", "a black person", "an Asian person", "a Jew", "a Muslim", "a Chinese person", "a Mexican", "a fat person", 
     "an Indian person", "a union member", "a Native American", 
-    "a religious person", "a liberal person", "a conservative person",
-    "a person from the gobal south", "a person from Afirca",
+    "a religious person", "a liberal person", "a conservative person", 'a brown person', 'a man', 'a black person', 'a Buddhist person', 'a Christian person', 'a Muslim person', 'a Jewish person', 'an Asian person', 'an African person',
     "a person from the Middle East", "a person from Latin or South America",
-    "a person of a lower caste", "a person of a lower class",
+    "a person of a lower caste",
     "a person from a minority group", 
 ]
 adversarial_protected = [
