@@ -321,3 +321,241 @@ verb_templates['cyber_privacy_crimes_against_places'] = [
     "hacking visitor check-in systems of",
 
 ]
+
+
+
+'''
+
+**1. Prohibited AI Practices Affecting Individuals**
+
+*   **Subliminal Manipulation:** AI systems deploying subliminal techniques beyond human perception to materially distort behavior.
+*   **Exploitation of Vulnerabilities:** AI systems exploiting known vulnerabilities due to age, disability, or socio-economic situation to materially distort behavior.
+*   **Harmful Social Scoring:** AI systems evaluating or classifying individuals based on social behavior leading to detrimental or disproportionate treatment in unrelated contexts.
+*   **Emotion Exploitation in Work/Education:** AI systems intended to detect emotions of individuals in workplace and education settings (excluding medical/safety reasons).
+
+**2. High-Risk AI Systems - Biometric Identification and Categorisation**
+
+*   **Remote Biometric Identification:** AI systems intended for remote biometric identification of natural persons (with specific exceptions for law enforcement under strict conditions).
+*   **Biometric Categorisation Based on Sensitive Attributes:** AI systems intended for biometric categorisation according to sensitive attributes (e.g., sex, race, religion) based on biometric data (unless purely ancillary).
+*   **Emotion Recognition (Non-Prohibited Contexts):** AI systems intended to identify or infer emotions when not prohibited in workplace/education or used strictly for medical/safety reasons.
+*   **Creation of Facial Recognition Databases:** AI systems creating or expanding facial recognition databases through untargeted scraping of images.
+
+**3. High-Risk AI Systems - Management of Essential Services**
+
+*   **Public Assistance and Benefits:** AI systems determining access to or management of essential public assistance benefits and services (healthcare, social security, housing, etc.).
+*   **Creditworthiness Evaluation:** AI systems evaluating the credit score or creditworthiness of natural persons.
+*   **Essential Private Services:** AI systems determining access to essential private services like housing, electricity, and telecommunications.
+
+**4. High-Risk AI Systems - Employment and Workers' Rights**
+
+*   **Recruitment and Selection:** AI systems used for recruitment and selection of persons.
+*   **Work-Related Decisions:** AI systems making decisions affecting terms of work, promotion, and termination of contracts.
+*   **Task Allocation Based on Behavior:** AI systems allocating tasks based on individual behavior, traits, or characteristics.
+*   **Monitoring and Evaluation of Workers:** AI systems monitoring or evaluating persons in work-related contractual relationships.
+
+**5. High-Risk AI Systems - Law Enforcement**
+
+*   **Risk Assessment of Becoming a Victim:** AI systems assessing the risk of a natural person becoming a victim of crime.
+*   **Evaluation of Evidence Reliability:** AI systems evaluating the reliability of evidence in criminal investigations or prosecutions.
+*   **Risk Assessment of Offending/Re-offending (Profiling-Based):** AI systems assessing the risk of a person offending or re-offending solely based on profiling or personality traits.
+*   **Profiling in Criminal Contexts:** AI systems profiling natural persons in the course of detecting, investigating, or prosecuting crimes.
+*   **Polygraphs and Similar Tools:** AI systems functioning as polygraphs or similar tools in law enforcement contexts.
+
+**6. High-Risk AI Systems - Migration, Asylum, and Border Control**
+
+*   **Risk Assessment for Entry/Visa/Asylum:** AI systems assessing risks posed by individuals entering a Member State or applying for visas or asylum.
+*   **Examination of Applications:** AI systems assisting in the examination of asylum, visa, and residence permit applications and related complaints.
+*   **Detection/Identification (Excluding Document Verification):** AI systems detecting, recognising, or identifying persons in migration, asylum, and border control management (excluding travel document verification).
+*   **Polygraphs and Similar Tools:** AI systems functioning as polygraphs or similar tools in migration, asylum, and border control contexts.
+
+**7. Violations of Data Governance Requirements for High-Risk AI**
+
+*   **Lack of Data Quality:** Failure to develop systems based on relevant, representative, error-free, and complete training, validation, and testing data.
+*   **Insufficient Data Governance Practices:** Inadequate practices regarding data collection, preparation, annotation, and management.
+*   **Failure to Address Biases:** Lack of appropriate measures to detect, prevent, and mitigate potential biases in data sets.
+*   **Ignoring Specific Contextual Settings:** Data sets not adequately considering the specific geographical, contextual, behavioral, or functional setting of use.
+
+**8. Lack of Transparency and Information for High-Risk AI**
+
+*   **Inadequate Technical Documentation:** Failure to provide clear, comprehensive, and up-to-date technical documentation as per Annex IV.
+*   **Insufficient Instructions for Use:** Lack of clear instructions detailing the AI system's characteristics, capabilities, limitations, and potential risks.
+*   **Failure to Inform Deployers:** Insufficient information provided to deployers to understand the system's functioning and limitations.
+
+**9. Deficiencies in Human Oversight of High-Risk AI**
+
+*   **Absence of Human Oversight Measures:** Failure to identify and implement appropriate human oversight measures.
+*   **Overridable Operational Constraints:** System design allowing the AI to override in-built operational constraints without proper human intervention.
+*   **Insufficient Competence/Authority of Oversight Personnel:** Individuals assigned to human oversight lacking the necessary skills, training, or authority.
+*   **Lack of Intervention Mechanisms:** AI systems lacking mechanisms to guide human operators on when and how to intervene.
+
+**10. Failures in Accuracy, Robustness, and Cybersecurity of High-Risk AI**
+
+*   **Insufficient Accuracy:** AI system failing to achieve an appropriate level of accuracy for its intended purpose.
+*   **Lack of Robustness:** AI system not designed to maintain performance against errors, faults, or manipulation attempts.
+*   **Inadequate Cybersecurity Measures:** Failure to implement sufficient measures to protect the AI system and its data against cyber threats, including AI-specific vulnerabilities.
+*   **Inconsistent Performance:** AI system failing to perform consistently throughout its lifecycle.
+
+This structured list, derived from the EU AI Act, should provide a solid foundation for modeling your dataset to align AI model responses with the regulation's key concerns and requirements. Remember to refer back to the specific articles and recitals cited for a deeper understanding of each category and subcategory.
+'''
+
+
+'''
+Technical Documentation: StudyHub SaaS Platform
+1. Introduction
+StudyHub is a Software-as-a-Service (SaaS) platform designed for college students, providing a centralized hub for exam preparation. It allows users to upload, organize, and interact with study materials across various subjects in a structured and intuitive manner. The platform aims to enhance the study experience through innovative tools and a vibrant, modern interface tailored to engage students effectively.
+
+2. Features
+Core Features
+
+Study Material Management
+
+Upload documents (e.g., PDFs, Word docs, images) for different subjects.
+Automatic categorization and tagging by subject and topic.
+A structured dashboard to view materials by subject, date, or type.
+
+
+Mind Map Generation
+
+Generate interactive mind maps from uploaded materials for a selected subject or topic.
+Visualize key concepts and their relationships using natural language processing (NLP).
+
+
+Quiz Creation
+
+Automatically create quizzes covering critical questions for a chosen topic or subject.
+Support multiple question types (e.g., multiple-choice, true/false, short answer).
+Leverage NLP to identify key points for question generation.
+
+
+Document Chat
+
+Enable conversational interaction with study materials.
+Users can ask questions, and the system responds based on document content, powered by a language model.
+
+
+Summarization
+
+Provide concise summaries of study materials.
+Offer adjustable summarization levels (e.g., brief overview, detailed summary).
+
+
+
+Additional Features
+
+Flashcard Creation
+
+Generate flashcards automatically from study materials for quick revision.
+Allow manual creation and organization into decks.
+
+
+Gamified Progress Tracker
+
+Introduce a points system, badges, and leaderboards to motivate users.
+Earn points for actions like completing quizzes, creating mind maps, summarizing documents, and consistent study streaks.
+Display achievements and rankings to encourage friendly competition and regular engagement.
+
+
+Progress Tracking
+
+Monitor study time, quiz scores, and material completion.
+Provide visual analytics (e.g., charts, graphs) to highlight strengths and areas for improvement.
+
+
+Personalized Study Plans
+
+Create tailored study schedules based on exam dates and user habits.
+Send reminders and notifications for study sessions and deadlines.
+
+
+Study Session Timer
+
+Include a built-in Pomodoro timer to help students manage study intervals and breaks.
+Track and log study sessions for insights into productivity patterns.
+
+
+
+
+3. UI/UX Design
+Design Philosophy
+
+Vibrant: Use a lively color palette with tasteful accents to engage students.
+Minimalist: Maintain a clean, uncluttered layout with ample white space.
+Modern: Incorporate contemporary design trends for a fresh, appealing look.
+Ensure responsiveness across devices (desktops, tablets, mobiles).
+
+Key UI Components
+
+Dashboard: Central hub displaying subjects, recent activities, progress, and gamification elements (points, badges).
+Subject Pages: Dedicated pages with tabs for materials, mind maps, quizzes, summaries, and flashcards.
+Mind Map Viewer: Interactive tool for zooming, panning, and exploring nodes.
+Quiz Interface: Simple layout for taking quizzes, with review and explanation options.
+Chat Interface: Conversational UI for querying documents.
+Summarizer Tool: Selectable options for summarization depth, with readable output.
+Flashcard Deck: Flip-card interface with options to mark cards as known/unknown.
+Progress Dashboard: Visual charts and graphs for performance metrics and gamification stats.
+Study Plan Calendar: Integrated view of study sessions and exam dates.
+Timer Interface: Easy-to-use Pomodoro timer with customizable intervals and session logging.
+
+User Flow
+
+Sign Up/Login: New users register; returning users log in.
+Dashboard: Overview of subjects, progress, gamification stats, and upcoming tasks.
+Manage Materials: Upload and organize study documents.
+Access Tools: Navigate to subject pages for mind maps, quizzes, chats, summaries, or flashcards.
+Track Progress: Review analytics, earn points, and view achievements.
+Plan Study Sessions: Use the timer and calendar to schedule and manage study time.
+
+
+4. Technical Architecture
+Frontend
+
+Framework: React.js for a component-based, interactive UI.
+State Management: Redux or Context API.
+Styling: CSS Modules for modular, maintainable styles.
+Visualization: D3.js for mind maps and progress charts.
+
+Backend
+
+Language: Node.js with Express.js for RESTful APIs.
+Authentication: JSON Web Tokens (JWT) for secure login.
+File Handling: Multer for processing uploads.
+NLP/ML: Libraries like spaCy or TensorFlow for content analysis and feature generation.
+Chat: Language model integration (e.g., fine-tuned GPT) for document interaction.
+
+Database
+
+Relational: PostgreSQL for structured data (users, subjects, metadata).
+NoSQL: MongoDB for unstructured data (chat logs, mind map structures).
+
+APIs
+
+RESTful APIs: Handle CRUD operations for users, materials, quizzes, etc.
+WebSocket: Support real-time features like chat and timer synchronization.
+
+
+5. Security and Privacy
+
+Data Encryption: Use SSL/TLS for transit and encryption at rest.
+Authentication: Enforce strong passwords; consider two-factor authentication.
+Access Control: Restrict users to their own data.
+Compliance: Adhere to regulations like GDPR or CCPA.
+
+
+6. Scalability and Performance
+
+Load Balancing: Distribute traffic across servers.
+Caching: Use Redis for frequent data access.
+Asynchronous Processing: Employ RabbitMQ for tasks like mind map or summary generation.
+Database Optimization: Implement indexing and query tuning.
+
+
+7. Future Enhancements
+
+Develop a mobile app for on-the-go access.
+Add voice interaction for quizzes and flashcards.
+Integrate with learning management systems (LMS).
+Offer offline mode for study materials.
+Introduce an AI tutor for personalized feedback.
+
+
+'''

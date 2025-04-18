@@ -1,11 +1,20 @@
 import os
 import chromadb
+import PyPDF2
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# Function to read the EU AI Act text file
-def read_text_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return file.read()
+# Function to read content from a PDF file
+def read_pdf_file(file_path):
+    text = ""
+    with open(file_path, 'rb') as file:
+        pdf_reader = PyPDF2.PdfReader(file)
+        for page_num in range(len(pdf_reader.pages)):
+            page = pdf_reader.pages[page_num]
+            text += page.extract_text() + "\n"
+            if page_num%10==0:
+                print(page_num)
+                print(page.extract_text())
+    return text
 
 # Function to chunk the text
 def chunk_text(text, chunk_size=500, chunk_overlap=50):
@@ -24,7 +33,7 @@ def ingest_to_chroma(chunks):
     client = chromadb.PersistentClient(path=persist_directory)
     
     # Create or get collection
-    collection_name = "eu-ai-act"
+    collection_name = "eu-ai"
     try:
         collection = client.get_collection(collection_name)
         print(f"Collection '{collection_name}' already exists. Using existing collection.")
@@ -58,16 +67,16 @@ def ingest_to_chroma(chunks):
     return collection
 
 def main():
-    file_path = "eu_ai_act.txt"
+    file_path = "eu_ai_act.pdf"  # Updated file extension to .pdf
     
     # Check if file exists
     if not os.path.exists(file_path):
         print(f"Error: File '{file_path}' not found.")
         return
     
-    # Read the text file
-    print(f"Reading file: {file_path}")
-    text = read_text_file(file_path)
+    # Read the PDF file
+    print(f"Reading PDF file: {file_path}")
+    text = read_pdf_file(file_path)  # Using the new PDF reader function
     
     # Chunk the text
     print("Chunking text...")
