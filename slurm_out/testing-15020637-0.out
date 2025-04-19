@@ -1,0 +1,152 @@
+testing
+INFO 04-19 14:09:09 [__init__.py:239] Automatically detected platform cuda.
+INFO 04-19 14:09:22 [config.py:689] This model supports multiple tasks: {'classify', 'reward', 'generate', 'embed', 'score'}. Defaulting to 'generate'.
+INFO 04-19 14:09:22 [config.py:1901] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 04-19 14:09:23 [core.py:61] Initializing a V1 LLM engine (v0.8.4) with config: model='/leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac', speculative_config=None, tokenizer='/leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 04-19 14:09:25 [utils.py:2444] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x145c56e0fce0>
+[W419 14:09:26.457074078 Utils.hpp:165] Warning: Environment variable NCCL_BLOCKING_WAIT is deprecated; use TORCH_NCCL_BLOCKING_WAIT instead (function operator())
+INFO 04-19 14:09:26 [parallel_state.py:959] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 04-19 14:09:26 [cuda.py:221] Using Flash Attention backend on V1 engine.
+INFO 04-19 14:09:26 [gpu_model_runner.py:1276] Starting to load model /leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac...
+WARNING 04-19 14:09:26 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:03<00:09,  3.26s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:21<00:23, 11.82s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:39<00:14, 14.71s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:54<00:00, 15.02s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:54<00:00, 13.68s/it]
+
+INFO 04-19 14:10:21 [loader.py:458] Loading weights took 54.76 seconds
+INFO 04-19 14:10:21 [gpu_model_runner.py:1291] Model loading took 14.2717 GiB and 55.130176 seconds
+INFO 04-19 14:10:29 [backends.py:416] Using cache directory: /leonardo/home/userexternal/hraj0000/.cache/vllm/torch_compile_cache/bcc442ba6c/rank_0_0 for vLLM's torch.compile
+INFO 04-19 14:10:29 [backends.py:426] Dynamo bytecode transform time: 7.71 s
+INFO 04-19 14:10:31 [backends.py:132] Cache the graph of shape None for later use
+INFO 04-19 14:10:50 [backends.py:144] Compiling a graph for general shape takes 20.70 s
+INFO 04-19 14:11:04 [monitor.py:33] torch.compile takes 28.41 s in total
+INFO 04-19 14:11:05 [kv_cache_utils.py:634] GPU KV cache size: 762,672 tokens
+INFO 04-19 14:11:05 [kv_cache_utils.py:637] Maximum concurrency for 131,072 tokens per request: 5.82x
+INFO 04-19 14:11:28 [gpu_model_runner.py:1626] Graph capturing finished in 23 secs, took 1.45 GiB
+INFO 04-19 14:11:28 [core.py:163] init engine (profile, create kv cache, warmup model) took 67.11 seconds
+INFO 04-19 14:11:28 [core_client.py:435] Core engine process 0 ready.
+  0%|          | 0/13 [00:00<?, ?it/s]
+Processing subcategories in High-Risk AI Systems - Biometric Identification and Categorisation:   0%|          | 0/4 [00:00<?, ?it/s][AProcessing subcategories in High-Risk AI Systems - Biometric Identification and Categorisation:   0%|          | 0/4 [00:17<?, ?it/s]
+  0%|          | 0/13 [00:17<?, ?it/s]
+Traceback (most recent call last):
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/leonardo_work/EUHPC_E03_068/alert-eu/gen.py", line 347, in <module>
+    generate_all_questions()
+  File "/leonardo_work/EUHPC_E03_068/alert-eu/gen.py", line 202, in generate_all_questions
+    context = get_relevant_context(collection, category, subcategory)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo_work/EUHPC_E03_068/alert-eu/gen.py", line 128, in get_relevant_context
+    results = collection.query(
+              ^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/api/models/Collection.py", line 207, in query
+    query_request = self._validate_and_prepare_query_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 95, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 324, in _validate_and_prepare_query_request
+    request_embeddings = self._embed_record_set(record_set=query_records)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 558, in _embed_record_set
+    return self._embed(input=record_set[field])  # type: ignore[literal-required]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/api/models/CollectionCommon.py", line 571, in _embed
+    return self._embedding_function(input=input)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/api/types.py", line 489, in __call__
+    result = call(self, input)
+             ^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/utils/embedding_functions/__init__.py", line 100, in __call__
+    return ONNXMiniLM_L6_V2()(input)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/api/types.py", line 489, in __call__
+    result = call(self, input)
+             ^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/utils/embedding_functions/onnx_mini_lm_l6_v2.py", line 262, in __call__
+    self._download_model_if_not_exists()
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/utils/embedding_functions/onnx_mini_lm_l6_v2.py", line 300, in _download_model_if_not_exists
+    self._download(
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/chromadb/utils/embedding_functions/onnx_mini_lm_l6_v2.py", line 106, in _download
+    with httpx.stream("GET", url) as resp:
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_api.py", line 172, in stream
+    with client.stream(
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 880, in stream
+    response = self.send(
+               ^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 926, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 235, in handle_request
+    with map_httpcore_exceptions():
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out in query.
+slurmstepd: error: *** JOB 15020637 ON lrdn2703 CANCELLED AT 2025-04-19T14:13:11 ***

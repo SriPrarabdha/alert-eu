@@ -1,0 +1,40 @@
+testing
+INFO 04-19 13:46:21 [__init__.py:239] Automatically detected platform cuda.
+Traceback (most recent call last):
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/transformers_utils/config.py", line 266, in get_config
+    raise ValueError(
+ValueError: Could not detect config format for no config file found. Ensure your model has either config.json (HF format) or params.json (Mistral format).
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/leonardo_work/EUHPC_E03_068/alert-eu/gen.py", line 16, in <module>
+    model = LLM(model="cognitivecomputations/dolphin-2.9.2-qwen2-7b", tensor_parallel_size=4, download_dir="/leonardo_work/EUHPC_E03_068/alert-eu/cache")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/utils.py", line 1099, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 248, in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/engine/llm_engine.py", line 515, in from_engine_args
+    vllm_config = engine_args.create_engine_config(usage_context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1154, in create_engine_config
+    model_config = self.create_model_config()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1042, in create_model_config
+    return ModelConfig(
+           ^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/config.py", line 423, in __init__
+    hf_config = get_config(self.hf_config_path or self.model,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/leonardo/home/userexternal/hraj0000/miniconda3/lib/python3.12/site-packages/vllm/transformers_utils/config.py", line 283, in get_config
+    raise ValueError(error_message) from e
+ValueError: Invalid repository ID or local directory specified: 'cognitivecomputations/dolphin-2.9.2-qwen2-7b'.
+Please verify the following requirements:
+1. Provide a valid Hugging Face repository ID.
+2. Specify a local directory that contains a recognized configuration file.
+   - For Hugging Face models: ensure the presence of a 'config.json'.
+   - For Mistral models: ensure the presence of a 'params.json'.
+

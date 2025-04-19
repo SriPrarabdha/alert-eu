@@ -1,0 +1,36 @@
+testing
+INFO 04-19 14:29:51 [__init__.py:239] Automatically detected platform cuda.
+INFO 04-19 14:30:04 [config.py:689] This model supports multiple tasks: {'classify', 'embed', 'score', 'reward', 'generate'}. Defaulting to 'generate'.
+INFO 04-19 14:30:04 [config.py:1901] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 04-19 14:30:06 [core.py:61] Initializing a V1 LLM engine (v0.8.4) with config: model='/leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac', speculative_config=None, tokenizer='/leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 04-19 14:30:07 [utils.py:2444] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x1496e07e3980>
+[W419 14:30:08.723417294 Utils.hpp:165] Warning: Environment variable NCCL_BLOCKING_WAIT is deprecated; use TORCH_NCCL_BLOCKING_WAIT instead (function operator())
+INFO 04-19 14:30:08 [parallel_state.py:959] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 04-19 14:30:08 [cuda.py:221] Using Flash Attention backend on V1 engine.
+INFO 04-19 14:30:08 [gpu_model_runner.py:1276] Starting to load model /leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac...
+WARNING 04-19 14:30:08 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:03<00:09,  3.21s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:17<00:19,  9.66s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:41<00:16, 16.16s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:55<00:00, 15.31s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:55<00:00, 13.82s/it]
+
+INFO 04-19 14:31:04 [loader.py:458] Loading weights took 55.33 seconds
+INFO 04-19 14:31:04 [gpu_model_runner.py:1291] Model loading took 14.2717 GiB and 55.709570 seconds
+INFO 04-19 14:31:12 [backends.py:416] Using cache directory: /leonardo/home/userexternal/hraj0000/.cache/vllm/torch_compile_cache/bcc442ba6c/rank_0_0 for vLLM's torch.compile
+INFO 04-19 14:31:12 [backends.py:426] Dynamo bytecode transform time: 7.89 s
+INFO 04-19 14:31:12 [backends.py:115] Directly load the compiled graph for shape None from the cache
+INFO 04-19 14:31:21 [monitor.py:33] torch.compile takes 7.89 s in total
+INFO 04-19 14:31:22 [kv_cache_utils.py:634] GPU KV cache size: 762,672 tokens
+INFO 04-19 14:31:22 [kv_cache_utils.py:637] Maximum concurrency for 131,072 tokens per request: 5.82x
+INFO 04-19 14:31:42 [gpu_model_runner.py:1626] Graph capturing finished in 20 secs, took 1.45 GiB
+INFO 04-19 14:31:42 [core.py:163] init engine (profile, create kv cache, warmup model) took 38.07 seconds
+INFO 04-19 14:31:42 [core_client.py:435] Core engine process 0 ready.
+Traceback (most recent call last):
+  File "/leonardo_work/EUHPC_E03_068/alert-eu/gen.py", line 352, in <module>
+    generate_all_questions()
+  File "/leonardo_work/EUHPC_E03_068/alert-eu/gen.py", line 184, in generate_all_questions
+    embedding_function = ONNXMiniLM_L6_V2(
+                         ^^^^^^^^^^^^^^^^^
+TypeError: ONNXMiniLM_L6_V2.__init__() got an unexpected keyword argument 'MODEL_NAME'

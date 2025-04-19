@@ -9,10 +9,15 @@ import torch
 from vllm import LLM, SamplingParams
 import random
 from mapping2 import example_mapping
+import os
+from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
+from chromadb.utils import embedding_functions
 
-tokenizer = AutoTokenizer.from_pretrained("cognitivecomputations/dolphin-2.9.2-qwen2-7b", cache_dir="/leonardo_work/EUHPC_E03_068/harsh_old_model_cache")
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
-model = LLM(model="cognitivecomputations/dolphin-2.9.2-qwen2-7b", tensor_parallel_size=1, download_dir="/leonardo_work/EUHPC_E03_068/harsh_old_model_cache")
+tokenizer = AutoTokenizer.from_pretrained("cognitivecomputations/dolphin-2.9.2-qwen2-7b", cache_dir="/leonardo_work/EUHPC_E03_068/alert-eu/cache")
+
+model = LLM(model="/leonardo_work/EUHPC_E03_068/alert-eu/cache/models--cognitivecomputations--dolphin-2.9.2-qwen2-7b/snapshots/c443c4eb5138ed746ac49ed98bf3c183dc5380ac")
 
 
 def upsample_questions(questions, num_upsamples, model, tokenizer, sampling_params):
@@ -178,7 +183,9 @@ def generate_questions(context, category, subcategory, num_questions, sampling_p
 def generate_all_questions():
     # Initialize ChromaDB client and collection
     client = chromadb.PersistentClient(path="./chroma_db")
-    collection = client.get_collection("eu-ai")
+    collection = client.get_collection(name="eu-ai")
+    
+
     
     # Initialize the nested dictionary structure for questions
     all_questions = {}
@@ -225,6 +232,7 @@ def generate_all_questions():
             all_questions[category][subcategory] = list(subcategory_questions)
     
     # Write to JSON file with the requested structure
+    os.makedirs("output_prompts/v2", exist_ok=True)
     with open("output_prompts/v2/alert_eu_prompts.json", "w") as f:
         json.dump(all_questions, f, indent=4)
 
